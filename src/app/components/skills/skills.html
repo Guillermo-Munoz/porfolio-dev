@@ -1,0 +1,28 @@
+<div class="terminal-container">
+  <div class="terminal-header">
+    <div class="terminal-buttons">
+      <div class="terminal-button close"></div>
+      <div class="terminal-button minimize"></div>
+      <div class="terminal-button maximize"></div>
+    </div>
+  </div>
+  <div class="terminal-body">
+    <ul class="skills-list">
+      @for (skill of displayedSkills; track $index) {
+      <li class="skill-item">
+        <span class="prompt">></span>
+        <span class="skill-text">{{ skill }}</span>
+        @if (!isComplete && $index === displayedSkills.length - 1) {
+        <span class="cursor"></span>
+        }
+      </li>
+      }
+    </ul>
+    @if (isComplete) {
+    <div class="terminal-line">
+      <span class="prompt">C:\skills&gt;</span>
+      <span class="cursor"></span>
+    </div>
+    }
+  </div>
+</div>

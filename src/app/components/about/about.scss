@@ -1,0 +1,125 @@
+.about {
+  padding: 100px 20px;
+  background: #0a192f;
+  color: #ccd6f6;
+  font-family: monospace;
+  
+
+  .section-title {
+  display: flex;
+  align-items: center;
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+  font-weight: bold;
+  color: #ccd6f6; // color del texto principal
+
+  span {
+    color: #64ffda; // color del número
+    margin-right: 0.5rem;
+  }
+
+  &::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: #233554; // la raya (un gris azulado suave)
+    margin-left: 1rem;   // separación del texto
+  }
+}
+
+
+  .about-container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .about-content {
+    display: flex;
+    flex-direction: row;
+    gap: 3rem;
+    align-items: center;
+
+    @media (max-width: 768px) {
+      flex-direction: column;
+    }
+  }
+
+  .about-text {
+    font-size: 1.1rem;
+    color: #8892B0;
+    flex: 3;
+   
+
+    p {
+      margin-bottom: 1rem;
+      line-height: 1.6;
+       max-width: 600px;
+    }
+
+    .highlight {
+      color: #64ffda;
+      font-weight: bold;
+    }
+  }
+
+  .about-image {
+  position: relative;
+  flex: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .profile-img {
+    max-width: 500px;
+    border-radius: 8px;
+    box-shadow: 0 10px 30px -15px rgba(0, 0, 0, 0.5);
+    position: relative;
+    z-index: 2;
+    transition: transform 0.3s ease;
+
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
+
+  .profile-blur {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 550px;
+    height: auto;
+    transform: translate(-50%, -50%);
+    filter: blur(25px) brightness(2); 
+    opacity: 0.6;
+    border-radius: 8px;
+    z-index: 1;
+  }
+ }
+ 
+ 
+ .about.card.glow {
+  position: relative;            /* necesario para que ::before se posicione dentro */
+  background: #1e1e2f;           /* color de la tarjeta */
+  border-radius: 16px;
+  padding: 2rem;
+  color: #fff;
+  overflow: hidden;              /* oculta partes del glow fuera del cuadro */
+}
+
+/* Glow decorativo */
+.about.card.glow::before {
+  content: '';
+  position: absolute;
+  top: 50%;                      /* centrado vertical */
+  left: 50%;                     /* centrado horizontal */
+  transform: translate(-50%, -50%);
+  width: 400px;                  /* tamaño de la "bola de luz" */
+  height: 400px;
+  background: radial-gradient(circle, rgba(0, 200, 255, 0.6), transparent 70%);
+  filter: blur(120px);           /* efecto difuminado */
+  z-index: -1;                   /* queda detrás del contenido */
+}
+
+ 
+
+}

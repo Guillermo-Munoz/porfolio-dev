@@ -1,0 +1,18 @@
+<section id="experience" class="experience">
+  <div class="experience-container">
+    <h2 class="section-title"><span>02.</span> Experiencia</h2>
+
+    @for (exp of aExperiences; track exp.empresa) {
+    <div class="experience-card">
+      <h3>{{ exp.puesto }}</h3>
+      <div class="empresa">{{ exp.empresa }}</div>
+      <div class="fecha-ubicacion">{{ exp.fecha }} • {{ exp.ubicacion }}</div>
+      <ul>
+        @for (task of exp.responsabilidades; track task) {
+        <li>{{ task }}</li>
+        }
+      </ul>
+    </div>
+    }
+  </div>
+</section>

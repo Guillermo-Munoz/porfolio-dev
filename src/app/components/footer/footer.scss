@@ -1,0 +1,50 @@
+.footer {
+  background: #0a192f;
+  color: #1f2020;
+  font-family: monospace;
+  padding: 2rem 1rem;
+  text-align: center;
+  border-top: 1px solid #233554;
+  position: relative;
+  z-index: 10;
+  overflow: hidden; 
+
+  .footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .footer-text {
+    color: #0a0a0a;
+    font-size: 1.3rem;
+
+    .highlight {
+      color: #64ffda;
+      font-weight: bold;
+    }
+  }
+
+  .footer-subtext {
+    font-size: 1rem;
+    color: #151616;
+    opacity: 0.8;
+  }
+
+  /* Luz difusa central */
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: min(900px, 100vw); 
+    height: 100%;
+    transform: translateX(-50%);
+    background: radial-gradient(circle, rgba(5, 193, 240, 0.76), transparent 70%);
+    filter: blur(60px);
+    z-index: -1;
+  }
+}
